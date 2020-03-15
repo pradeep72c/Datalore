@@ -1,0 +1,16 @@
+<html>
+<head>
+    <title>
+        Get Symbol Data
+    </title>
+</head>
+<body>
+    <form action="/data" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <br/>
+        <input type="submit" value="Get Data">
+    </form>
+</body>
+</html>
+
