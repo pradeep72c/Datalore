@@ -1,12 +1,15 @@
 import csv
 from datetime import datetime
 
+from django.db import transaction
+
 from stock.models import Stock
 
 
 class StockService:
 
     @staticmethod
+    @transaction.atomic
     def parse_and_persist_stocks_files(files):
         for file in files:
             try:
