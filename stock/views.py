@@ -15,6 +15,7 @@ class SimpleTable(tables.Table):
         model = Stock
 
 def index(request):
+    print("hello")
     return render(request, '../templates/index.html')
 
 def download_data(request):
