@@ -10,6 +10,9 @@ class DownloadStocksService:
     def download_and_parse_files(base_url, file_name_format, year, month, download_path=None):
         downloaded_files = list()
 
+        if not os.path.exists(download_path):
+            os.makedirs(download_path)
+
         month_range = monthrange(year, strptime(month,'%b').tm_mon)
         for date in range(1, month_range[1]+1):
             date = "{0:0=2d}".format(date)
